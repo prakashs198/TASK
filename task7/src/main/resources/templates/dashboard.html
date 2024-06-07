@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+<h2>Admin Dashboard</h2>
+<h3>Table 1 Data</h3>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="record : ${table1Data}">
+        <td th:text="${record.id}"></td>
+        <td th:text="${record.name}"></td>
+        <td th:text="${record.value}"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+<h3>Table 2 Data</h3>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="record : ${table2Data}">
+        <td th:text="${record.id}"></td>
+        <td th:text="${record.name}"></td>
+        <td th:text="${record.value}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<form th:action="@{/merge}" method="post">
+    <button type="submit">Merge Records</button>
+</form>
+</body>
+</html>
